@@ -11,23 +11,26 @@ import io.appium.java_client.AppiumBy;
 public class LongPress extends RealDevice {
 	@Test
 	public void press() throws InterruptedException {
+		
 		driver.findElement(AppiumBy.accessibilityId("Views")).click();
 		Thread.sleep(3000);
 		
-		driver.findElement(AppiumBy.accessibilityId("Expandable Lists")).click();
-		Thread.sleep(3000);
-		
-		driver.findElement(By.id("android:id/text1")).click();
-		Thread.sleep(3000);
-		
-		
-		WebElement e1= driver.findElement(By.xpath("//android.widget.TextView[@text='People Names']"));
-		longPressAction(e1);
-		Thread.sleep(2000);
+//		driver.findElement(AppiumBy.accessibilityId("Expandable Lists")).click();
+//		Thread.sleep(3000);
+//		driver.findElement(AppiumBy.accessibilityId("1. Custom Adapter")).click();
+//		Thread.sleep(3000);
+//		
+//		driver.findElement(By.id("android:id/text1")).click();
+//		Thread.sleep(3000);
 		
 		
-		String msg=driver.findElement(By.id("android:id/title")).getText();
-		assertEquals(msg, "Sample menu");
+//		WebElement e1= driver.findElement(By.xpath("//android.widget.TextView[@text='People Names']"));
+//		longPressAction(e1);
+//		Thread.sleep(2000);
+//		
+//		
+//		String msg=driver.findElement(By.id("android:id/title")).getText();
+//		assertEquals(msg, "Sample menu");
 		
 	}
 

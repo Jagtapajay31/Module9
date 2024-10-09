@@ -3,13 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.appiumtesting.GeneralStoreOpen">
+      <class name="com.appiumtesting.LongPress">
         <methods>
-          <include name="before"/>
-          <include name="after"/>
-          <include name="cart"/>
+          <include name="press"/>
         </methods>
-      </class> <!-- com.appiumtesting.GeneralStoreOpen -->
+      </class> <!-- com.appiumtesting.LongPress -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

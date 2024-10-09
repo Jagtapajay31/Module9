@@ -9,12 +9,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import com.google.common.collect.ImmutableMap;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.touch.offset.PointOption;
 
 /*
  * 2) Write an Appium Program to connect with Realdevice and open APIdemo.app application on your
@@ -23,8 +26,8 @@ realdevice.
 public class RealDevice {
 	public AndroidDriver driver;
 	AppiumDriverLocalService service;
-	@BeforeTest
-	public static void main(String[] args) throws MalformedURLException, InterruptedException {
+	@Test
+	public void devices() throws MalformedURLException, InterruptedException {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		
 		cap.setCapability("deviceName", "realme RMX2195");
@@ -48,4 +51,19 @@ public class RealDevice {
 					ImmutableMap.of("elementId",((RemoteWebElement)ele).getId(),
 							"duration",2000));
 		}
+		public void seekbar(WebElement slider) {
+			
+			int xAxisStartPoint=slider.getLocation().getX();
+			int xAxisEndPoint=xAxisStartPoint+slider.getSize().getWidth();
+			int yAxisStartPoint=slider.getLocation().getY();
+			
+			
+			TouchAction action=new TouchAction(driver);
+			
+			action.press(PointOption.point(xAxisStartPoint, yAxisStartPoint))
+			.moveTo(PointOption.point(xAxisEndPoint-100,yAxisStartPoint))
+			.release()
+			.perform();
+			
+}
 }
