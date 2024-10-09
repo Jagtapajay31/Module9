@@ -15,8 +15,7 @@ public class Scrolling extends RealDevice{
 		driver.findElement(AppiumBy.accessibilityId("Views")).click();
 		Thread.sleep(3000);
 				
-		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector())" + ".scrollIntoView(text(\"Seek Bar\"));"))
-		.click();
+		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector())" + ".scrollIntoView(text(\"Seek Bar\"));")).click();
 		Thread.sleep(2000);
 		
 		WebElement s1=driver.findElement(By.id("io.appium.android.apis:id/seek"));

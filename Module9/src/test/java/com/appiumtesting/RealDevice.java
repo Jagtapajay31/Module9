@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebElement;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -26,7 +27,7 @@ realdevice.
 public class RealDevice {
 	public AndroidDriver driver;
 	AppiumDriverLocalService service;
-	@Test
+	@BeforeTest
 	public void devices() throws MalformedURLException, InterruptedException {
 		DesiredCapabilities cap=new DesiredCapabilities();
 		
@@ -64,6 +65,5 @@ public class RealDevice {
 			.moveTo(PointOption.point(xAxisEndPoint-100,yAxisStartPoint))
 			.release()
 			.perform();
-			
-}
+			}
 }
