@@ -3,12 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.appiumtesting.Scrolling">
+      <class name="com.appiumassessment.FaceBookLoging">
         <methods>
-          <include name="devices"/>
-          <include name="scroll"/>
+          <include name="tearDown"/>
+          <include name="loging"/>
+          <include name="test"/>
         </methods>
-      </class> <!-- com.appiumtesting.Scrolling -->
+      </class> <!-- com.appiumassessment.FaceBookLoging -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
